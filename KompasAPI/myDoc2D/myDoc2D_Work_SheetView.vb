@@ -24,7 +24,7 @@ Partial Public Class myDoc2D
 		For i As Integer = 0 To listSheetView.Count - 1
 			If sheetView1.Name = listSheetView(i).Name Then
 				If sheetView1.Ref = listSheetView(i).Ref Or sheetView1.Name = listSheetView(i).Name Then
-					Throw New Exception("Ошибка! В документе можно использовать идентичное имя вида. В данном случае ошибка вызвана тем, что попытались добавить вид который с таким именем уже в документе существует.")
+                    Throw New Exception("Ошибка! В документе нельзя использовать идентичное имя вида. В данном случае ошибка вызвана тем, что попытались добавить вид который с таким именем уже в документе существует.")
 				End If
 			End If
 		Next
