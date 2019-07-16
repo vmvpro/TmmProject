@@ -62,6 +62,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modules\mdl_CreateDataContext.vb" />
+    <Compile Include="Modules\mdl_ExtensionsKompas.vb" />
+    <Compile Include="Modules\mdl_Function.vb" />
+    <Compile Include="Modules\mdl_InputData.vb" />
+    <Compile Include="Modules\mdl_InputData_New.vb" />
+    <Compile Include="Modules\mdl_lDefin2d.vb" />
+    <Compile Include="Modules\mdl_Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

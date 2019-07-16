@@ -52,37 +52,6 @@ Partial Public Class myDoc2D
 		countSheetView_ += 1
 	End Sub
 
-	Public Sub AddView(ByRef sheetView1 As cls_Test_SheetView)
-		For i As Integer = 0 To listSheetView.Count - 1
-			If sheetView1.Name = listSheetView(i).Name Then
-				If sheetView1.Ref = listSheetView(i).Ref Or sheetView1.Name = listSheetView(i).Name Then
-					Throw New Exception("Ошибка! В документе можно использовать идентичное имя вида. В данном случае ошибка вызвана тем, что попытались добавить вид который с таким именем уже в документе существует.")
-				End If
-			End If
-		Next
-
-		If Not sheetView1.Ref = -1 Then
-			Throw New Exception("Ошибка! Вид может пренадлежат только одному документу и добавление происходит один раз.")
-		End If
-
-		If sheetView1.Name Is Nothing Then
-			Throw New Exception("Ошибка! Виду не присвоено имя в классе")
-		End If
-
-		Dim newSheetView As New cls_Test_SheetView(Me)
-		newSheetView.Name = sheetView1.Name
-		newSheetView.X = sheetView1.X
-		newSheetView.Y = sheetView1.Y
-		newSheetView.AngleView = sheetView1.AngleView
-		newSheetView.ScaleView = sheetView1.ScaleView
-		newSheetView.ColorView = sheetView1.ColorView
-
-		sheetView1 = newSheetView
-
-		listSheetView.Add(sheetView1)
-		countSheetView_ += 1
-	End Sub
-
 #End Region
 
     Public Function ActiveSheet(sheetName As String) As cls_SheetView

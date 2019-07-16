@@ -1,6 +1,7 @@
 ﻿Imports Kompas6API5
 Imports System.Threading.Thread
 Imports System.IO
+Imports Kompas6Constants
 
 ''' <summary>
 ''' Перечисление стиль отрисовки точки
@@ -93,29 +94,29 @@ Module mdl_Function
 
     Function kompasApp() As Kompas6API5.Application
 
-		If Environment.UserName = "tz023111" Then
-			Try
-				kompas = GetObject(, "KOMPAS.Application.5")
-			Catch ex As Exception
+        If Environment.UserName = "tz023111" Then
+            Try
+                kompas = GetObject(, "KOMPAS.Application.5")
+            Catch ex As Exception
 
-				'kompas = GetObject(Environment.CurrentDirectory & "\ШаблонЧертежа.cdw", "KOMPAS.Application.5")
+                'kompas = GetObject(Environment.CurrentDirectory & "\ШаблонЧертежа.cdw", "KOMPAS.Application.5")
 
-				Dim kompasProcess As ProcessStartInfo = New ProcessStartInfo("c:\Program Files\ASCON\KOMPAS-3D V15\Bin\KOMPAS.exe")
-				Process.Start(kompasProcess).WaitForExit(10000)
-				Sleep(10000)
+                Dim kompasProcess As ProcessStartInfo = New ProcessStartInfo("c:\Program Files\ASCON\KOMPAS-3D V15\Bin\KOMPAS.exe")
+                Process.Start(kompasProcess).WaitForExit(10000)
+                Sleep(10000)
 
 
 
-				kompas = GetObject(, "KOMPAS.Application.5")
-			End Try
+                kompas = GetObject(, "KOMPAS.Application.5")
+            End Try
 
-			Return kompas
-		End If
+            Return kompas
+        End If
 
         Try
-			kompas = GetObject(, "KOMPAS.Application.5")
+            kompas = GetObject(, "KOMPAS.Application.5")
         Catch ex As Exception
-			kompas = CreateObject("KOMPAS.Application.5") ' Подключаемся к КОМПАСу
+            kompas = CreateObject("KOMPAS.Application.5") ' Подключаемся к КОМПАСу
         End Try
 
         Return kompas
@@ -145,7 +146,10 @@ Module mdl_Function
 
             kompas.Visible = True
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            Dim message = "loadForm(ByRef doc2D As Document2D, fileName As String)"
+            'MessageBox.Show("Ошибка! При этой ошибке требуется сначала добавить вид на лист")
+            Throw New Exception(message & ex.Message)
+            'MessageBox.Show(ex.Message)
         End Try
     End Sub
 

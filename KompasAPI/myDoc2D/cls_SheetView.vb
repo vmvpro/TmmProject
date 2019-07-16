@@ -93,8 +93,9 @@ Public Class cls_SheetView
 			Return refSheetView
 		Catch ex As Exception
 
-			MessageBox.Show("Ошибка! При этой ошибке требуется сначала добавить вид на лист")
-			Throw New Exception(ex.Message)
+            Dim message = "Ошибка! При этой ошибке требуется сначала добавить вид на лист"
+            'MessageBox.Show("Ошибка! При этой ошибке требуется сначала добавить вид на лист")
+            Throw New Exception(message & ex.Message)
 		End Try
 
 	End Function

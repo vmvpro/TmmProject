@@ -1,6 +1,6 @@
 ﻿Imports Kompas6API5, Kompas6Constants
 
-Module mdl_InputData
+Module mdl_InputData_New
     Dim kompas As KompasObject
     Dim ActiveDoc2D As ksDocument2D
     Dim DocumParam As ksDocumentParam
