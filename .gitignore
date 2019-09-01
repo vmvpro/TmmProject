@@ -1,4 +1,6 @@
-TmmProjectWPF/obj/
 TmmProjectWPF/bin/
-KompasAPI/bin/
-KompasAPI/obj/
+TmmProjectWPF/obj/
+TmmProjectWPF/.vs
+DataBase/TmmProjectWPF_copy.db
+KompasAPI/bin
+KompasAPI/obj
