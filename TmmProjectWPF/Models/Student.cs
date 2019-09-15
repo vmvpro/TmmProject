@@ -2,11 +2,11 @@
 
 namespace TmmProjectWPF.Models
 {
-    internal class Stutent : INotifyPropertyChanged
+    internal class Student : INotifyPropertyChanged
     {
         private string name;
 
-        public Stutent(string name)
+        public Student(string name)
         {
             this.name = name;
         }
