@@ -4,3 +4,4 @@ TmmProjectWPF/.vs
 DataBase/TmmProjectWPF_copy.db
 KompasAPI/bin
 KompasAPI/obj
+/TmmProjectWPF/TmmProjectWPF.csproj.user
