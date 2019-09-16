@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Windows;
+using System.Windows.Input;
+using TmmProjectWPF.Commands;
 using TmmProjectWPF.Models;
 
 namespace TmmProjectWPF.ViewModels
@@ -11,6 +14,7 @@ namespace TmmProjectWPF.ViewModels
         public StudentViewModel()
         {
             student = new Student("VMVPRO");
+            RenameNameCommand = new ShowStudentViewCommand(this);
         }
 
         //public Student Student_ => student; 
@@ -20,10 +24,14 @@ namespace TmmProjectWPF.ViewModels
             get { return student; }
         }
 
+        public ICommand RenameNameCommand { get; set; }
+
         public void RenameName()
         {
             //Debug.Assert(false, $"Rename name {Student.Name}" );
-            Debug.Assert(false, String.Format("Rename name {0}", Student.Name));
+            //Debug.Assert(false, String.Format("Rename name {0}", Student.Name));
+            MessageBox.Show("RenameName");
+
         }
 
     }

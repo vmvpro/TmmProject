@@ -12,11 +12,12 @@ namespace TmmProjectWPF.ViewModels
     public class MainViewModel
     {
         StudentView studentView; // = new StudentView();
+        StudentViewModel studentViewModel; // = new StudentView();
 
         public MainViewModel()
         {
             studentView = new StudentView();
-            ShowStudentView = new ShowStudentViewCommand(studentView);
+            ShowStudentView = new ShowStudentViewCommand(studentViewModel);
         }
 
         ICommand ShowStudentView

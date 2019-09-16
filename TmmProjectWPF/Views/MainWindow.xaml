@@ -5,7 +5,7 @@
     <Grid>
         <Button Content="Show Window Student" HorizontalAlignment="Left" 
                 Height="62" Margin="95,101,0,0" VerticalAlignment="Top" Width="127"
-                Command="{Binding ShowStudentViewCommand}" />
+                Click="Button_Click" />
 
     </Grid>
 </Window>
