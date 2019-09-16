@@ -27,7 +27,7 @@ namespace TmmProjectWPF.Views
         {
             InitializeComponent();
 
-            studentView = new StudentView(); 
+            //studentView = new StudentView(); 
 
             DataContext = new MainViewModel();
 

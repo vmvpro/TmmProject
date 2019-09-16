@@ -6,11 +6,11 @@ using TmmProjectWPF.Views;
 
 namespace TmmProjectWPF.Commands
 {
-    public class ShowStudentViewCommand : ICommand
+    public class RenameNameCommand : ICommand
     {
         StudentViewModel studentViewModel;
         
-        public ShowStudentViewCommand(StudentViewModel studentViewModel)
+        public RenameNameCommand(StudentViewModel studentViewModel)
         {
             this.studentViewModel = studentViewModel;
         }

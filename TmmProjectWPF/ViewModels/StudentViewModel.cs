@@ -14,7 +14,7 @@ namespace TmmProjectWPF.ViewModels
         public StudentViewModel()
         {
             student = new Student("VMVPRO");
-            RenameNameCommand = new ShowStudentViewCommand(this);
+            RenameNameCommand = new RenameNameCommand(this);
         }
 
         //public Student Student_ => student; 
