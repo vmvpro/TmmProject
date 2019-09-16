@@ -10,17 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TmmProjectWPF.ViewModels;
 
-namespace TmmProjectWPF.Views
+namespace TmmProjectWPF
 {
     /// <summary>
-    /// Логика взаимодействия для StudentView.xaml
+    /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class StudentView : Window
+    public partial class MainWindow : Window
     {
-        public StudentView()
+        public MainWindow()
         {
             InitializeComponent();
         }

@@ -1,12 +1,16 @@
 ﻿<Window x:Class="TmmProjectWPF.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:TmmProjectWPF.ViewModels"
         Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
     <Grid>
         <Button Content="Show Window Student" HorizontalAlignment="Left" 
                 Height="62" Margin="95,101,0,0" VerticalAlignment="Top" Width="127"
                 Command="{Binding ShowStudentCommand}">
-                <!--Click="Button_Click"-->
+            <!--Click="Button_Click"-->
         </Button>
 
     </Grid>
