@@ -2,7 +2,7 @@
 
 namespace TmmProjectWPF.Models
 {
-    internal class Student : INotifyPropertyChanged
+    public class Student : INotifyPropertyChanged
     {
         private string name;
 

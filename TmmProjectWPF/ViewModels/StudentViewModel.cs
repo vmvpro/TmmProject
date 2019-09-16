@@ -4,7 +4,7 @@ using TmmProjectWPF.Models;
 
 namespace TmmProjectWPF.ViewModels
 {
-    internal class StudentViewModel
+    public class StudentViewModel
     {
         private Student student;
 
