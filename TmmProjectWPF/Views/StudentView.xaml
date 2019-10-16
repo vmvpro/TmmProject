@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:TmmProjectWPF.Views"
         mc:Ignorable="d"
         Title="StudentView" Height="450" Width="800">
-    <Window.DataContext>
-        <local:StudentView/>
-    </Window.DataContext>
+    <!--<Window.DataContext>
+        <local:StudentViewModel/>
+    </Window.DataContext>-->
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
@@ -19,7 +20,8 @@
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
             <Label Name="lblName" Content="Name" FontSize="25" />
             <TextBox Name="txtName" Width="200" Text="{Binding Student.Name}" FontSize="25" />
-            <Button Content="Rename" FontSize="25" Command="{Binding RenameNameCommand}" />
+            <Button Content="Rename" FontSize="25" 
+                    Command="{Binding RenameNameCommand}" />
 
 
         </StackPanel>

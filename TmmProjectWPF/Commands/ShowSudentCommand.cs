@@ -8,11 +8,11 @@ namespace TmmProjectWPF.Commands
 {
     public class ShowStudentCommand : ICommand
     {
-        StudentView studentView;
-        
-        public ShowStudentCommand(StudentView studentView)
+        private MainViewModel mainViewModel;
+
+        public ShowStudentCommand(MainViewModel mainViewModel)
         {
-            this.studentView = studentView;
+            this.mainViewModel = mainViewModel;
         }
 
         public event EventHandler CanExecuteChanged
@@ -28,7 +28,7 @@ namespace TmmProjectWPF.Commands
 
         public void Execute(object parameter)
         {
-            studentView.Show();
+            mainViewModel.ShowStudent();
         }
     }
 }

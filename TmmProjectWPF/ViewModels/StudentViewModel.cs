@@ -30,7 +30,7 @@ namespace TmmProjectWPF.ViewModels
         {
             //Debug.Assert(false, $"Rename name {Student.Name}" );
             //Debug.Assert(false, String.Format("Rename name {0}", Student.Name));
-            MessageBox.Show("RenameName");
+            MessageBox.Show(student.Name);
 
         }
 

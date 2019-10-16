@@ -8,21 +8,18 @@ namespace TmmProjectWPF.ViewModels
     public class MainViewModel
     {
         private StudentView studentView; // = new StudentView();
-        private StudentViewModel studentViewModel; // = new StudentView();
-
+        
         public MainViewModel()
         {
-            studentView = new StudentView();
-            ShowStudentCommand = new ShowStudentCommand(studentView);
+            ShowStudentCommand = new ShowStudentCommand(this);
         }
 
         public ICommand ShowStudentCommand { get; set; }
 
         public void ShowStudent()
         {
-            //studentView.Show();
-
-            MessageBox.Show("ShowStudent");
+            studentView = new StudentView();
+            studentView.Show();
         }
 
     }

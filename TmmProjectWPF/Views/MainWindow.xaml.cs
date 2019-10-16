@@ -26,11 +26,14 @@ namespace TmmProjectWPF.Views
         public MainWindow()
         {
             InitializeComponent();
+
+            this.DataContext = new MainViewModel();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            studentView.Show();
-        }
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    studentView = new StudentView();
+        //    studentView.Show();
+        //}
     }
 }
