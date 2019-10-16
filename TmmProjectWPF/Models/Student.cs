@@ -5,7 +5,6 @@ namespace TmmProjectWPF.Models
     public class Student : INotifyPropertyChanged
     {
         private string name;
-
         public Student(string name)
         {
             this.name = name;
@@ -13,16 +12,12 @@ namespace TmmProjectWPF.Models
 
         public string Name
         {
-            get
-            {
-                return name;
-            }
+            get { return name; }
             set
             {
                 name = value;
                 //OnPropertyChanged(nameof(name));
                 OnPropertyChanged("Name");
-
             }
         }
         

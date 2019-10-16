@@ -5,13 +5,13 @@ using TmmProjectWPF.Views;
 
 namespace TmmProjectWPF.ViewModels
 {
-    public class MainViewModel
+    public class MainWindowViewModel
     {
-        private StudentView studentView; // = new StudentView();
+        private StudentView studentView;
         
-        public MainViewModel()
+        public MainWindowViewModel()
         {
-            ShowStudentCommand = new ShowStudentCommand(this);
+            ShowStudentCommand = new ShowStudentViewCommand(this);
         }
 
         public ICommand ShowStudentCommand { get; set; }

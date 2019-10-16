@@ -6,11 +6,11 @@ using TmmProjectWPF.Views;
 
 namespace TmmProjectWPF.Commands
 {
-    public class ShowStudentCommand : ICommand
+    public class ShowStudentViewCommand : ICommand
     {
-        private MainViewModel mainViewModel;
+        private MainWindowViewModel mainViewModel;
 
-        public ShowStudentCommand(MainViewModel mainViewModel)
+        public ShowStudentViewCommand(MainWindowViewModel mainViewModel)
         {
             this.mainViewModel = mainViewModel;
         }
