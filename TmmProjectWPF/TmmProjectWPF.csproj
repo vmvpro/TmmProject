@@ -57,9 +57,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Commands\MainWindowCommand\ShowSudentViewCommand.cs" />
-    <Compile Include="Commands\StudentViewCommand\RenameNameCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowSudentViewCommand.cs" />
+    <Compile Include="Commands\StudentViewCommands\RenameNameCommand.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowSelectionWorkCommand.cs" />
+    <Compile Include="Views\SelectionWorkView.xaml.cs">
+      <DependentUpon>SelectionWorkView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StudentView.xaml.cs">
       <DependentUpon>StudentView.xaml</DependentUpon>
     </Compile>
@@ -77,6 +81,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\SelectionWorkView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\StudentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
