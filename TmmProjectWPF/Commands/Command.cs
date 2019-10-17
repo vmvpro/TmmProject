@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace TmmProjectWPF.Commands
 {
-    class Command : ICommand
+    public class Command : ICommand
     {
         Action _command;
 

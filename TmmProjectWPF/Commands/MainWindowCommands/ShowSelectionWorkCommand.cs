@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
+using TmmProjectWPF.ViewModels;
 
-namespace TmmProjectWPF.ViewModels
+namespace TmmProjectWPF.Commands
 {
     class ShowSelectionWorkCommand : ICommand
     {
