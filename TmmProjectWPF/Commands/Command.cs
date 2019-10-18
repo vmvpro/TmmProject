@@ -9,17 +9,19 @@ namespace TmmProjectWPF.Commands
 {
     public class Command : ICommand
     {
-        Action _command;
+        Action _executeNotParam;
+        Action<object> _executeParam;
+        Func<object, bool> _canExecute;
 
-        public Command(Action _command)
+        public Command(Action<object> execute, Func<object, bool> canExecute = null)
         {
-            this._command = _command;
+            _executeParam = execute;
+            _canExecute = canExecute;
         }
 
         public bool CanExecute(object parameter)
         {
-            //throw new NotImplementedException();
-            return true;
+            return _canExecute == null || _canExecute(parameter);
         }
 
         public event EventHandler CanExecuteChanged
@@ -30,9 +32,7 @@ namespace TmmProjectWPF.Commands
 
         public void Execute(object parameter)
         {
-            //throw new NotImplementedException();
-
-            _command.Invoke();
+            _executeParam.Invoke(parameter);
         }
     }
 }

@@ -5,27 +5,70 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using TmmProjectWPF.Commands;
+using TmmProjectWPF.Models;
 
 namespace TmmProjectWPF.ViewModels
 {
     public class SelectionWorkViewModel
     {
-        Command messageCommand;
+        //public ObservableColection<SelectionWork> test
+
+        List<SelectionWork> listSelectionWork;
 
         public SelectionWorkViewModel()
         {
-            messageCommand = new Command(MessageBoxShow);
+            messageCommandNotParam = new Command(MessageBoxNotParam);
+
+            messageCommandParam = new Command(MessageBoxParam);
+
+            listSelectionWork = new List<SelectionWork>();
+
+            for (int i = 0; i <= 9; i++)
+            {
+                listSelectionWork.Add(new SelectionWork() { WorkId = i, VariantId = i });
+            }
         }
 
-        public Command MessageCommand
+        public List<SelectionWork> ListSelectionWork
         {
-            get { return messageCommand; }
+            get { return listSelectionWork; }
         }
 
-        public void MessageBoxShow()
+        public IEnumerable<int> ListSelectionWorkAndVariant
         {
-            MessageBox.Show("TestCommand");
+            get { return Enumerable.Range(0, 10); }
         }
+
+        #region Commands
+
+        Command messageCommandNotParam;
+        public Command MessageCommandNotParam
+        {
+            get { return messageCommandNotParam; }
+        }
+
+        Command messageCommandParam;
+        public Command MessageCommandParam
+        {
+            get { return messageCommandParam; }
+        }
+
+        #endregion
+
+        #region Methods
+
+        public void MessageBoxParam(object test)
+        {
+            MessageBox.Show("TestCommand " + (int) test);
+        }
+
+        public void MessageBoxNotParam(object test)
+        {
+            MessageBox.Show("MessageBoxShowString ");
+        }
+
+        #endregion
+
 
     }
 
