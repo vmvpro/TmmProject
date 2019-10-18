@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Input;
 using TmmProjectWPF.ViewModels;
 
-namespace TmmProjectWPF.Commands
+namespace TmmProjectWPF.Commands.MainWindowCommands
 {
     class ShowSelectionWorkCommand : ICommand
     {

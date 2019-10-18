@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 using TmmProjectWPF.Commands;
+using TmmProjectWPF.Commands.MainWindowCommands;
 using TmmProjectWPF.Views;
 
 namespace TmmProjectWPF.ViewModels

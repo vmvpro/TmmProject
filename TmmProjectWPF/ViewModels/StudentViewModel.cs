@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Input;
 using TmmProjectWPF.Commands;
+using TmmProjectWPF.Commands.StudentViewCommands;
 using TmmProjectWPF.Models;
 
 namespace TmmProjectWPF.ViewModels

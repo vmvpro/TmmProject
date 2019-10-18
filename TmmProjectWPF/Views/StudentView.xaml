@@ -21,7 +21,8 @@
             <Label Name="lblName" Content="Name" FontSize="25" />
             <TextBox Name="txtName" Width="200" Text="{Binding Student.Name}" FontSize="25" />
             <Button Content="Rename" FontSize="25" 
-                    Command="{Binding RenameNameCommand}" />
+                    Command="{Binding RenameNameCommand}" 
+                     />
 
 
         </StackPanel>

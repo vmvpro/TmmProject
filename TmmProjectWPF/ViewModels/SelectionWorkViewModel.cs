@@ -25,7 +25,8 @@ namespace TmmProjectWPF.ViewModels
 
             for (int i = 0; i <= 9; i++)
             {
-                listSelectionWork.Add(new SelectionWork() { WorkId = i, VariantId = i });
+                //listSelectionWork.Add(new SelectionWork() { WorkId = i, VariantId = i });
+                listSelectionWork.Add(new SelectionWork(workId: i, variantId: i));
             }
         }
 
@@ -59,7 +60,7 @@ namespace TmmProjectWPF.ViewModels
 
         public void MessageBoxParam(object test)
         {
-            MessageBox.Show("TestCommand " + (int) test);
+            MessageBox.Show("TestCommand " + (int)test);
         }
 
         public void MessageBoxNotParam(object test)

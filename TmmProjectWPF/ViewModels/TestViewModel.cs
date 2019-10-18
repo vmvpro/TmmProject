@@ -9,30 +9,36 @@ using TmmProjectWPF.Models;
 
 namespace TmmProjectWPF.ViewModels
 {
-    public class TestkViewModel
+    public class TestViewModel
     {
         //public ObservableColection<SelectionWork> test
 
         List<SelectionWork> listSelectionWork;
 
-        public TestkViewModel()
+        public TestViewModel()
         {
             messageCommandNotParam = new Command(MessageBoxNotParam);
 
             messageCommandParam = new Command(MessageBoxParam);
 
+            objectSelectionWorkCommand = new Command(ObjectSelectionWork);
+
             listSelectionWork = new List<SelectionWork>();
 
             for (int i = 0; i <= 9; i++)
             {
-                listSelectionWork.Add(new SelectionWork() { WorkId = i, VariantId = i });
+                //listSelectionWork.Add(new SelectionWork() { WorkId = i, VariantId = i });
+                var obj = new SelectionWork(workId: i, variantId: i);
+                listSelectionWork.Add(obj);
             }
+
+
         }
 
-        public List<SelectionWork> ListSelectionWork
-        {
-            get { return listSelectionWork; }
-        }
+        //public List<SelectionWork> ListSelectionWork
+        //{
+        //    get { return listSelectionWork; }
+        //}
 
         public IEnumerable<int> ListSelectionWorkAndVariant
         {
@@ -53,6 +59,12 @@ namespace TmmProjectWPF.ViewModels
             get { return messageCommandParam; }
         }
 
+        Command objectSelectionWorkCommand;
+        public Command ObjectSelectionWorkCommand
+        {
+            get { return objectSelectionWorkCommand; }
+        }
+
         #endregion
 
         #region Methods
@@ -66,6 +78,15 @@ namespace TmmProjectWPF.ViewModels
         {
             MessageBox.Show("MessageBoxShowString ");
         }
+
+        public void ObjectSelectionWork(object selWorkObj)
+        {
+            SelectionWork selWork = (SelectionWork)selWorkObj;
+
+            MessageBox.Show(selWork.WorkId + " - " + selWork.VariantId);
+        }
+
+        
 
         #endregion
 

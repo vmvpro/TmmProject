@@ -4,7 +4,7 @@ using System.Windows.Input;
 using TmmProjectWPF.ViewModels;
 using TmmProjectWPF.Views;
 
-namespace TmmProjectWPF.Commands
+namespace TmmProjectWPF.Commands.MainWindowCommands
 {
     public class ShowStudentViewCommand : ICommand
     {
