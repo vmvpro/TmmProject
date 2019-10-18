@@ -21,24 +21,16 @@ namespace TmmProjectWPF.ViewModels
 
             messageCommandParam = new Command(MessageBoxParam);
 
-            listSelectionWork = new List<SelectionWork>();
-
-            for (int i = 0; i <= 9; i++)
-            {
-                //listSelectionWork.Add(new SelectionWork() { WorkId = i, VariantId = i });
-                listSelectionWork.Add(new SelectionWork(workId: i, variantId: i));
-            }
-        }
-
-        public List<SelectionWork> ListSelectionWork
-        {
-            get { return listSelectionWork; }
+            objectSelectionWorkCommand = new Command(ObjectSelectionWork);
+            
         }
 
         public IEnumerable<int> ListSelectionWorkAndVariant
         {
             get { return Enumerable.Range(0, 10); }
         }
+
+        //===========================================================
 
         #region Commands
 
@@ -54,7 +46,15 @@ namespace TmmProjectWPF.ViewModels
             get { return messageCommandParam; }
         }
 
+        Command objectSelectionWorkCommand;
+        public Command ObjectSelectionWorkCommand
+        {
+            get { return objectSelectionWorkCommand; }
+        }
+
         #endregion
+
+        //===========================================================
 
         #region Methods
 
@@ -66,6 +66,13 @@ namespace TmmProjectWPF.ViewModels
         public void MessageBoxNotParam(object test)
         {
             MessageBox.Show("MessageBoxShowString ");
+        }
+
+        public void ObjectSelectionWork(object selWorkObj)
+        {
+            SelectionWork selWork = (SelectionWork)selWorkObj;
+
+            MessageBox.Show(selWork.WorkId + " - " + selWork.VariantId);
         }
 
         #endregion

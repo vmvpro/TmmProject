@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TmmProjectWPF.ViewModels"
+        xmlns:convert="clr-namespace:TmmProjectWPF.Converters"
         mc:Ignorable="d">
 
     <Window.DataContext>
@@ -34,21 +35,38 @@
         </Grid.RowDefinitions>
 
         <Label Name="lblWork" Grid.Column="1" Grid.Row="1">Задание</Label>
-        <Label Name="lblVariant" Grid.Column="1" Grid.Row="2">Вариант</Label>
         <ComboBox Name="cboWork" Grid.Column="2" Grid.Row="1"
-                  ItemsSource ="{Binding ListSelectionWork }"
-                  SelectedValuePath="WorkId"
-                  DisplayMemberPath="WorkId" />
-        <Button Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" 
-        		Command="{Binding MessageCommandParam}" 
-        		CommandParameter="{Binding SelectedValue, ElementName=cboWork}" Content="Открыть"/>
+                  ItemsSource ="{Binding ListSelectionWorkAndVariant }"/>
         
-        
-
+        <Label Name="lblVariant" Grid.Column="1" Grid.Row="2">Вариант</Label>
         <ComboBox Name="cboVariant" Grid.Column="2" Grid.Row="2"
-                  ItemsSource ="{Binding ListSelectionWork }"
-                  SelectedValuePath="VariantId"
-                  DisplayMemberPath="VariantId"/>
+                  ItemsSource ="{Binding ListSelectionWorkAndVariant }"/>
+        
+        
+        <Button Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" 
+        		Content="Перейти"
+                Command="{Binding ObjectSelectionWorkCommand}">
+            <Button.Resources>
+                <convert:SelectionWorkConverter x:Key="selectionWorkConverter" />
+                <convert:IsEnabledConverter x:Key="isEnabledConverter" />
+            </Button.Resources>
+
+            <Button.CommandParameter>
+                <MultiBinding Converter="{StaticResource selectionWorkConverter}">
+                    <Binding ElementName="cboWork" Path="SelectedValue" />
+                    <Binding ElementName="cboVariant" Path="SelectedValue" />
+                </MultiBinding>
+            </Button.CommandParameter>
+
+            <Button.IsEnabled>
+                <MultiBinding Converter="{StaticResource isEnabledConverter}">
+                    <Binding ElementName="cboWork" Path="SelectedValue" />
+                    <Binding ElementName="cboVariant" Path="SelectedValue" />
+                </MultiBinding>
+            </Button.IsEnabled>
+
+        </Button>
+        
 
         
         
