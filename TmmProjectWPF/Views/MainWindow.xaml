@@ -18,6 +18,11 @@
         <Button Content="Show SelectionWork" HorizontalAlignment="Left" 
         	Height="62" Margin="55,157,0,0" VerticalAlignment="Top" Width="127"
         	Command="{Binding ShowSelectionWorkCommand}"/>
+        
+        <Button Content="Test" HorizontalAlignment="Left" Height="62" Margin="306,53,0,0" VerticalAlignment="Top" Width="154"
+                Command="{Binding TestViewShowCommand }"/>
+        
+        
 
     </Grid>
 </Window>

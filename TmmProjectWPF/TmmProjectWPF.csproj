@@ -63,12 +63,16 @@
     <Compile Include="Models\SelectionWork.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Commands\MainWindowCommands\ShowSelectionWorkCommand.cs" />
+    <Compile Include="ViewModels\TestkViewModel.cs" />
     <Compile Include="ViewModels\SelectionWorkViewModel.cs" />
     <Compile Include="Views\SelectionWorkView.xaml.cs">
       <DependentUpon>SelectionWorkView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StudentView.xaml.cs">
       <DependentUpon>StudentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestView.xaml.cs">
+      <DependentUpon>TestView.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -89,6 +93,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\StudentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

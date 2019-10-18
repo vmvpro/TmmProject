@@ -13,16 +13,27 @@ namespace TmmProjectWPF.ViewModels
         public MainWindowViewModel()
         {
             ShowStudentCommand = new ShowStudentViewCommand(this);
-            ShowStudentCommand = new ShowStudentViewCommand(this);
-
             ShowSelectionWorkCommand = new ShowSelectionWorkCommand(this);
+
+            testViewShowCommand = new Command(TestViewShow);
         }
 
         public ICommand ShowStudentCommand { get; set; }
 
         public ICommand ShowSelectionWorkCommand { get; set; }
 
+        private Command testViewShowCommand;
 
+        public Command TestViewShowCommand
+        {
+            get { return testViewShowCommand; }
+        }
+
+
+        private void TestViewShow(object param )
+        {
+            new TestView().Show();
+        }
 
         public void ShowStudent()
         {
