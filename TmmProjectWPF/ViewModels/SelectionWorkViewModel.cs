@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using TmmProjectWPF.Commands;
 using TmmProjectWPF.Models;
+using TmmProjectWPF.Views;
 
 namespace TmmProjectWPF.ViewModels
 {
@@ -17,12 +18,7 @@ namespace TmmProjectWPF.ViewModels
 
         public SelectionWorkViewModel()
         {
-            messageCommandNotParam = new Command(MessageBoxNotParam);
-
-            messageCommandParam = new Command(MessageBoxParam);
-
             objectSelectionWorkCommand = new Command(ObjectSelectionWork);
-            
         }
 
         public IEnumerable<int> ListSelectionWorkAndVariant
@@ -33,18 +29,6 @@ namespace TmmProjectWPF.ViewModels
         //===========================================================
 
         #region Commands
-
-        Command messageCommandNotParam;
-        public Command MessageCommandNotParam
-        {
-            get { return messageCommandNotParam; }
-        }
-
-        Command messageCommandParam;
-        public Command MessageCommandParam
-        {
-            get { return messageCommandParam; }
-        }
 
         Command objectSelectionWorkCommand;
         public Command ObjectSelectionWorkCommand
@@ -72,7 +56,14 @@ namespace TmmProjectWPF.ViewModels
         {
             SelectionWork selWork = (SelectionWork)selWorkObj;
 
-            MessageBox.Show(selWork.WorkId + " - " + selWork.VariantId);
+            //MessageBox.Show(selWork.WorkId + " - " + selWork.VariantId);
+
+
+            var generateWorkView = new GenerateWorkView(selWork);
+
+            generateWorkView.Show();
+
+
         }
 
         #endregion

@@ -1,0 +1,37 @@
+﻿<Window x:Class="TmmProjectWPF.Views.GenerateWorkView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GenerateWorkView" Height="329" Width="460"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TmmProjectWPF.ViewModels"
+        xmlns:convert="clr-namespace:TmmProjectWPF.Converters"
+        mc:Ignorable="d">
+    
+    <Grid>
+        <GroupBox Header="Входные данные:" HorizontalAlignment="Left" Height="128" Margin="20,25,0,0" VerticalAlignment="Top" Width="265">
+            <Canvas>
+                <Label Content="Задание" Canvas.Left="10" Canvas.Top="10" Width="70" RenderTransformOrigin="0.3,-0.269"/>
+                <TextBox Name="txtIdWork" Height="26" Canvas.Left="74" TextWrapping="Wrap" 
+                         Canvas.Top="10" Width="44" 
+                         Text="{Binding Path=Work, Mode=OneWay}"
+                         IsEnabled="False"/>
+                
+                <Label Content="Вариант" Canvas.Left="123" Canvas.Top="10" Width="65"/>
+                <TextBox Name="txtIdVariant" Height="26" Canvas.Left="198" TextWrapping="Wrap" 
+                         Canvas.Top="10" Width="48"
+                         Text="{Binding Path=Variant, Mode=OneWay}"
+                         IsEnabled="False"/>
+                <!---->
+
+                <Label Content="Фамилия" Canvas.Left="10" Canvas.Top="41" Width="59"/>
+                <TextBox x:Name="txtIdWork_Copy" Height="26" Canvas.Left="74" TextWrapping="Wrap" Text="" Canvas.Top="41" Width="172"/>
+                <Label Content="Год" Canvas.Left="10" Canvas.Top="72" Width="48" RenderTransformOrigin="-1.625,1.308"/>
+                <TextBox x:Name="txtIdVariant_Copy" Height="26" Canvas.Left="74" TextWrapping="Wrap" Text="" Canvas.Top="72" Width="55"/>
+
+            </Canvas>
+        </GroupBox>
+        <Button Content="Сгенерировать" HorizontalAlignment="Left" Height="25" Margin="168,113,0,0" VerticalAlignment="Top" Width="105"/>
+
+    </Grid>
+</Window>
