@@ -1,7 +1,7 @@
 ﻿<Window x:Class="TmmProjectWPF.Views.TestView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="TestView" Height="273.025" Width="250"
+        Title="TestView" Height="273.025" Width="533.792"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TmmProjectWPF.ViewModels"
@@ -11,50 +11,50 @@
     <Window.DataContext>
         <local:TestViewModel/>
     </Window.DataContext>
-
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20*"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="20*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="*"/>
-
-        </Grid.RowDefinitions>
-        <!--<>-->
-        <Grid Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
-
+    <StackPanel Orientation="Horizontal"  >
+        <Grid Margin="15">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="20*"/>
             </Grid.ColumnDefinitions>
-
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+
             </Grid.RowDefinitions>
+            <!--<>-->
+            <Grid Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
 
-            <Label Name="lblWork" Grid.Column="0" Grid.Row="0">Задание</Label>
-            <ComboBox Name="cboWork" Grid.Column="1" Grid.Row="0"
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Label Name="lblWork" Grid.Column="0" Grid.Row="0">Задание</Label>
+                <ComboBox Name="cboWork" Grid.Column="1" Grid.Row="0"
                   ItemsSource ="{Binding ListSelectionWorkAndVariant }"/>
 
-            <Label Name="lblVariant" Grid.Column="0" Grid.Row="1">Вариант</Label>
-            <ComboBox Name="cboVariant" Grid.Column="1" Grid.Row="1"
+                <Label Name="lblVariant" Grid.Column="0" Grid.Row="1">Вариант</Label>
+                <ComboBox Name="cboVariant" Grid.Column="1" Grid.Row="1"
                   ItemsSource ="{Binding ListSelectionWorkAndVariant }"/>
 
-        </Grid>
+            </Grid>
 
 
-        <!--<>-->
-        <Button Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" 
+            <!--<>-->
+            <Button Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" 
         		Command="{Binding MessageCommandParam}" 
         		CommandParameter="{Binding SelectedValue, ElementName=cboWork}" Content="Открыть"/>
 
@@ -62,42 +62,48 @@
 
 
 
-        <StackPanel Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2">
+            <StackPanel Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2">
 
-            <Button  
+                <Button  
         		Command="{Binding MessageCommandNotParam}" 
         		CommandParameter="{Binding SelectedValue, ElementName=cboWork}" Content="Открыть"/>
 
-            <ComboBox Name="cboTest" 
+                <ComboBox Name="cboTest" 
                   ItemsSource ="{Binding ListSelectionWorkAndVariant }"/>
 
-            <Button Content="ObjectWork" Command="{Binding ObjectSelectionWorkCommand}">
-                <Button.Resources>
-                    <convert:SelectionWorkConverter x:Key="selectionWorkConverter" />
-                    <convert:IsEnabledConverter x:Key="isEnabledConverter" />
-                </Button.Resources>
+                <Button Content="ObjectWork" Command="{Binding ObjectSelectionWorkCommand}">
+                    <Button.Resources>
+                        <convert:SelectionWorkConverter x:Key="selectionWorkConverter" />
+                        <convert:IsEnabledConverter x:Key="isEnabledConverter" />
+                    </Button.Resources>
 
-                <Button.CommandParameter>
-                    <MultiBinding Converter="{StaticResource selectionWorkConverter}">
-                        <Binding ElementName="cboWork" Path="SelectedValue" />
-                        <Binding ElementName="cboVariant" Path="SelectedValue" />
-                    </MultiBinding>
-                </Button.CommandParameter>
-                
-                <Button.IsEnabled>
-                    <MultiBinding Converter="{StaticResource isEnabledConverter}">
-                        <Binding ElementName="cboWork" Path="SelectedValue" />
-                        <Binding ElementName="cboVariant" Path="SelectedValue" />
-                    </MultiBinding>
-                </Button.IsEnabled>
+                    <Button.CommandParameter>
+                        <MultiBinding Converter="{StaticResource selectionWorkConverter}">
+                            <Binding ElementName="cboWork" Path="SelectedValue" />
+                            <Binding ElementName="cboVariant" Path="SelectedValue" />
+                        </MultiBinding>
+                    </Button.CommandParameter>
+
+                    <Button.IsEnabled>
+                        <MultiBinding Converter="{StaticResource isEnabledConverter}">
+                            <Binding ElementName="cboWork" Path="SelectedValue" />
+                            <Binding ElementName="cboVariant" Path="SelectedValue" />
+                        </MultiBinding>
+                    </Button.IsEnabled>
 
 
-                <!--<Button.CommandParameter>
+                    <!--<Button.CommandParameter>
                     <Binding ElementName="dsfsd" Path="Text"></Binding>
                 </Button.CommandParameter>-->
 
-            </Button>
-            <TextBox Name="txtVMV" Text="_555" Height="23" TextWrapping="Wrap" />
+                </Button>
+                <TextBox Name="txtVMV" Text="_555" Height="23" TextWrapping="Wrap" />
+            </StackPanel>
+        </Grid>
+        <StackPanel Width="250">
+            <Button Content="vmv1" 
+                    Command="{Binding AddedButtonsInCanvasCommand }" />
         </StackPanel>
-    </Grid>
+    </StackPanel>
+    
 </Window>

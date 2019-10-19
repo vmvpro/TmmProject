@@ -23,6 +23,8 @@ namespace TmmProjectWPF.ViewModels
 
             objectSelectionWorkCommand = new Command(ObjectSelectionWork);
 
+            addedButtonsInCanvasCommand = new Command(AddedButtonsInCanvas);
+
             listSelectionWork = new List<SelectionWork>();
 
             for (int i = 0; i <= 9; i++)
@@ -34,11 +36,6 @@ namespace TmmProjectWPF.ViewModels
 
 
         }
-
-        //public List<SelectionWork> ListSelectionWork
-        //{
-        //    get { return listSelectionWork; }
-        //}
 
         public IEnumerable<int> ListSelectionWorkAndVariant
         {
@@ -65,9 +62,20 @@ namespace TmmProjectWPF.ViewModels
             get { return objectSelectionWorkCommand; }
         }
 
+        Command addedButtonsInCanvasCommand;
+        public Command AddedButtonsInCanvasCommand
+        {
+            get { return addedButtonsInCanvasCommand; }
+        }
+
         #endregion
 
         #region Methods
+
+        public void AddedButtonsInCanvas(object test)
+        {
+            MessageBox.Show("AddedButtonsInCanvas");
+        }
 
         public void MessageBoxParam(object test)
         {

@@ -59,17 +59,31 @@
                     <RowDefinition Height="25"></RowDefinition>
                 </Grid.RowDefinitions>
                 
-                <Label Grid.Column="1" Grid.Row="1" Content="lbl" ></Label>
-                <TextBox Grid.Column="2" Grid.Row="1" Text="txt"  ></TextBox>
+                <Label      Name="lblL1" Grid.Column="1" Grid.Row="1" Content="lbl1" />
+                <TextBox    Name="txtL1" Grid.Column="2" Grid.Row="1" Text="txt1"  />
                 
-                <Label Grid.Column="1" Grid.Row="2" Content="lbl" ></Label>
-                <TextBox Grid.Column="2" Grid.Row="2" Text="txt"  ></TextBox>
+                <Label     Name="lblL2" Grid.Column="1" Grid.Row="2" Content="lbl2" />
+                <TextBox   Name="txtL2" Grid.Column="2" Grid.Row="2" Text="txt2"  />
                 
-                <Label Grid.Column="1" Grid.Row="3" Content="lbl" ></Label>
-                <TextBox Grid.Column="2" Grid.Row="3" Text="txt"  ></TextBox>
+                <Label    Name="lblL3" Grid.Column="1" Grid.Row="3" Content="lbl3" />
+                <TextBox  Name="txtL3" Grid.Column="2" Grid.Row="3" Text="txt3"  />
                 
-                <Label Grid.Column="1" Grid.Row="4" Content="lbl" ></Label>
-                <TextBox Grid.Column="2" Grid.Row="4" Text="txt"  ></TextBox>
+                <Label    Name="lblL4" Grid.Column="1" Grid.Row="4" Content="lbl4" />
+                <TextBox  Name="txtL4" Grid.Column="2" Grid.Row="4" Text="txt4"  />
+                
+                <Label    Name="lblL5" Grid.Column="1" Grid.Row="5" Content="lbl5" />
+                <TextBox  Name="txtL5" Grid.Column="2" Grid.Row="5" Text="txt5"  />
+                
+                <Label      x:Name="lblL1_Copy" Grid.Column="4" Grid.Row="1" Content="lbl1" />
+                <TextBox    x:Name="txtL1_Copy" Grid.Column="5" Grid.Row="1" Text="txt1"  />
+                <Label     x:Name="lblL2_Copy" Grid.Column="4" Grid.Row="2" Content="lbl2" />
+                <TextBox   x:Name="txtL2_Copy" Grid.Column="5" Grid.Row="2" Text="txt2"  />
+                <Label    x:Name="lblL3_Copy" Grid.Column="4" Grid.Row="3" Content="lbl3" />
+                <TextBox  x:Name="txtL3_Copy" Grid.Column="5" Grid.Row="3" Text="txt3"  />
+                <Label    x:Name="lblL4_Copy" Grid.Column="4" Grid.Row="4" Content="lbl4" />
+                <TextBox  x:Name="txtL4_Copy" Grid.Column="5" Grid.Row="4" Text="txt4"  />
+                <Label    x:Name="lblL5_Copy" Grid.Column="4" Grid.Row="5" Content="lbl5" />
+                <TextBox  x:Name="txtL5_Copy" Grid.Column="5" Grid.Row="5" Text="txt5"  />
                 
                 
             </Grid>
