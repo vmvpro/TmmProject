@@ -42,16 +42,6 @@ namespace TmmProjectWPF.ViewModels
 
         #region Methods
 
-        public void MessageBoxParam(object test)
-        {
-            MessageBox.Show("TestCommand " + (int)test);
-        }
-
-        public void MessageBoxNotParam(object test)
-        {
-            MessageBox.Show("MessageBoxShowString ");
-        }
-
         public void ObjectSelectionWork(object selWorkObj)
         {
             SelectionWork selWork = (SelectionWork)selWorkObj;
