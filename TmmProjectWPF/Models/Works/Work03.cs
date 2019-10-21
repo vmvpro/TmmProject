@@ -1,15 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using TmmProjectWPF.Models.DataAccess;
+
 
 namespace TmmProjectWPF.Models.Works
 {
     public class Work03 : INotifyPropertyChanged
     {
+        public Work03(long variant)
+        {
+            var dataRow = DataBase.Row(variant, TableName.z3_data);
+            this._L_ab = dataRow.Field<decimal>("L_ab");
+            this._L_bc = dataRow.Field<decimal>("L_bc");
+            this._L_bd = dataRow.Field<decimal>("L_bd");
+            this._L_a = dataRow.Field<decimal>("L_a");
+            this._m2 = dataRow.Field<decimal>("m2");
+            this._m3 = dataRow.Field<decimal>("m3");
+            this._m4 = dataRow.Field<decimal>("m4");
+
+            this._Fc = dataRow.Field<decimal>("Fc");
+
+            this._fi_v = dataRow.Field<long>("fi_v");
+            this._fi_dv = dataRow.Field<long>("fi_dv");
+            this._fi_pov = dataRow.Field<long>("fi_pov");
+            
+        }
+
         #region Fields
         private decimal _L_ab;
         public decimal L_ab
@@ -108,9 +130,9 @@ namespace TmmProjectWPF.Models.Works
         }
 
 
-        private int _fi_v;
+        private long _fi_v;
 
-        public int fi_v
+        public long fi_v
         {
             get { return _fi_v; }
             set
@@ -121,9 +143,9 @@ namespace TmmProjectWPF.Models.Works
         }
 
 
-        private int _fi_dv;
+        private long _fi_dv;
 
-        public int fi_dv
+        public long fi_dv
         {
             get { return _fi_dv; }
             set
@@ -134,9 +156,9 @@ namespace TmmProjectWPF.Models.Works
         }
 
 
-        private int _fi_pov;
+        private long _fi_pov;
 
-        public int fi_pov
+        public long fi_pov
         {
             get { return _fi_pov; }
             set

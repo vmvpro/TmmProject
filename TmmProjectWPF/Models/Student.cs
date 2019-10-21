@@ -5,6 +5,21 @@ namespace TmmProjectWPF.Models
 {
     public class Student : INotifyPropertyChanged
     {
+
+        private int _age;
+
+        public int Age
+        {
+            get { return _age; }
+            set
+            {
+                _age = value;
+                OnPropertyChanged("Age");
+            }
+        }
+        
+			
+
         private string name;
         public Student(string name)
         {

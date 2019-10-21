@@ -15,6 +15,8 @@ namespace TmmProjectWPF.ViewModels
 
         List<SelectionWork> listSelectionWork;
 
+        Student st;
+
         public TestViewModel()
         {
             messageCommandNotParam = new Command(MessageBoxNotParam);
@@ -34,8 +36,16 @@ namespace TmmProjectWPF.ViewModels
                 listSelectionWork.Add(obj);
             }
 
+            st = new Student("vmvpro");
+            st.Age = 29;
 
         }
+
+        public Student Student
+        {
+            get { return st; }
+        }
+
 
         public IEnumerable<int> ListSelectionWorkAndVariant
         {

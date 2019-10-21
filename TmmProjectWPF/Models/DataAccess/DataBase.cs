@@ -69,7 +69,7 @@ namespace TmmProjectWPF.Models.DataAccess
         {
             DirectoryInfo di = new DirectoryInfo(Environment.CurrentDirectory);
 
-            string path = di.Parent.Parent.Parent.FullName + @"\DataBase" + @"\TMM.db";
+            string path = di.Parent.Parent.Parent.FullName + @"\DataBase" + @"\TmmProjectWPF.db";
             //connectionString = @"data source=" + @"D:\Doc\Work\MS Visual Studio\LINQDataSet\DataBase\SQLiteDataSet.db";
             return @"data source=" + path;
         }
@@ -204,7 +204,7 @@ namespace TmmProjectWPF.Models.DataAccess
 
         public static Data LoadData(string tableName)
         {
-
+            UpdateDataBase();
             DataTable dt = DictionaryDataTables[tableName];
             SQLiteDataAdapter da = DataBase.DictionaryDataAdapters[tableName];
 
@@ -297,6 +297,8 @@ namespace TmmProjectWPF.Models.DataAccess
 
         public static DataRow Row(long ID, string tableName)
         {
+            UpdateDataBase();
+
             DataRow row;
             try
             {

@@ -37,8 +37,8 @@ namespace TmmProjectWPF.Converters
 
         public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if (values[0] == null || values[1] == null)
-                return (object)null;
+            //if (values[0] == null || values[1] == null)
+            //    return (object)null;
 
             //string lastName = (string)values[0];
             //string year = (string)values[1];

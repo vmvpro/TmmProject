@@ -100,9 +100,12 @@
                 <TextBox Name="txtVMV" Text="_555" Height="23" TextWrapping="Wrap" />
             </StackPanel>
         </Grid>
-        <StackPanel Width="250">
+        <StackPanel Width="250"  >
             <Button Content="vmv1" 
                     Command="{Binding AddedButtonsInCanvasCommand }" />
+            <TextBox Name="txtName" Text="{Binding Student.Name}" ></TextBox>
+            <TextBox Name="txtAge" Text="{Binding Student.Age}" ></TextBox>
+            
         </StackPanel>
     </StackPanel>
     
