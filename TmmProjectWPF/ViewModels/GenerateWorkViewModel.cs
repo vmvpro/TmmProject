@@ -55,17 +55,6 @@ namespace TmmProjectWPF.ViewModels
             Data zd_student = DataBase.LoadData(TableName.zd_student);
 
 
-
-            //SelectionWork selWork = (SelectionWork)selWorkObj;
-
-            //MessageBox.Show(selWork.WorkId + " - " + selWork.VariantId);
-
-
-            //var generateWorkView = new GenerateWorkView(selWork);
-
-            //generateWorkView.Show();
-
-
         }
 
         #endregion

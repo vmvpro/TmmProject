@@ -84,6 +84,7 @@
     <Compile Include="Models\DataAccess\TableName.cs" />
     <Compile Include="Models\SelectionWork.cs" />
     <Compile Include="Converters\SelectionWorkConverter.cs" />
+    <Compile Include="Models\Works\Work03.cs" />
     <Compile Include="ViewModels\GenerateWorkViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Commands\MainWindowCommands\ShowSelectionWorkCommand.cs" />

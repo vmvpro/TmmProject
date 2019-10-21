@@ -25,14 +25,28 @@
                 <!---->
 
                 <Label Content="Фамилия" Canvas.Left="10" Canvas.Top="41" Width="59"/>
-                <TextBox x:Name="txtIdWork_Copy" Height="26" Canvas.Left="74" TextWrapping="Wrap" Text="Мельник В.В." Canvas.Top="41" Width="162"/>
+                <TextBox x:Name="txtLastName" Height="26" Canvas.Left="74" TextWrapping="Wrap" Text="Мельник В.В." Canvas.Top="41" Width="162"/>
                 <Label Content="Год" Canvas.Left="10" Canvas.Top="72" Width="48" RenderTransformOrigin="-1.625,1.308"/>
-                <TextBox x:Name="txtIdVariant_Copy" Height="26" Canvas.Left="74" TextWrapping="Wrap" Text="2019" Canvas.Top="72" Width="55"/>
+                <TextBox x:Name="txtYear" Height="26" Canvas.Left="74" TextWrapping="Wrap" Text="2019" Canvas.Top="72" Width="55"/>
 
             </Canvas>
         </GroupBox>
         <Button Content="Сгенерировать" HorizontalAlignment="Left" Height="25" Margin="168,112,0,0" VerticalAlignment="Top" Width="94"
-                Command="" />
+                Command="" >
+            <Button.Resources>
+                <convert:CurrentWorkConverter x:Key="currentWorkConverter" />
+                <convert:IsEnabledConverter x:Key="isEnabledConverter" />
+            </Button.Resources>
+            <Button.CommandParameter>
+                <MultiBinding Converter="{StaticResource currentWorkConverter}">
+                    <Binding ElementName="txtLastName" Path="Text" />
+                    <Binding ElementName="txtYear" Path="Text" />
+                </MultiBinding>
+            </Button.CommandParameter>
+
+        </Button>
+                
+            
         <GroupBox Header="Данные механизма" HorizontalAlignment="Left" Height="250" Margin="20,176,0,0" VerticalAlignment="Top" Width="346">
             <Grid >
                 <Grid.ColumnDefinitions>

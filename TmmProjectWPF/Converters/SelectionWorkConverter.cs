@@ -32,6 +32,30 @@ namespace TmmProjectWPF.Converters
         }
     }
 
+    public class CurrentWorkConverter : IMultiValueConverter
+    {
+
+        public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (values[0] == null || values[1] == null)
+                return (object)null;
+
+            //string lastName = (string)values[0];
+            //string year = (string)values[1];
+
+            //var obj = new SelectionWork(work, variant);
+
+            //return obj;
+
+            return (object)values;
+        }
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
     public class IsEnabledConverter : IMultiValueConverter
     {
 
