@@ -75,16 +75,16 @@
                 <Label    Name="lblL5" Grid.Column="1" Grid.Row="5" Content="lbl5" />
                 <TextBox  Name="txtL5" Grid.Column="2" Grid.Row="5" Text="txt5"  />
                 
-                <Label      x:Name="lblL1_Copy" Grid.Column="4" Grid.Row="1" Content="lbl1" />
-                <TextBox    x:Name="txtL1_Copy" Grid.Column="5" Grid.Row="1" Text="txt1"  />
-                <Label     x:Name="lblL2_Copy" Grid.Column="4" Grid.Row="2" Content="lbl2" />
-                <TextBox   x:Name="txtL2_Copy" Grid.Column="5" Grid.Row="2" Text="txt2"  />
-                <Label    x:Name="lblL3_Copy" Grid.Column="4" Grid.Row="3" Content="lbl3" />
-                <TextBox  x:Name="txtL3_Copy" Grid.Column="5" Grid.Row="3" Text="txt3"  />
-                <Label    x:Name="lblL4_Copy" Grid.Column="4" Grid.Row="4" Content="lbl4" />
-                <TextBox  x:Name="txtL4_Copy" Grid.Column="5" Grid.Row="4" Text="txt4"  />
-                <Label    x:Name="lblL5_Copy" Grid.Column="4" Grid.Row="5" Content="lbl5" />
-                <TextBox  x:Name="txtL5_Copy" Grid.Column="5" Grid.Row="5" Text="txt5"  />
+                <Label    Name="lblL6"  Grid.Column="4" Grid.Row="1" Content="lbl1" />
+                <TextBox  Name="txtL6"  Grid.Column="5" Grid.Row="1" Text="txt1"  />
+                <Label    Name="lblL7"  Grid.Column="4" Grid.Row="2" Content="lbl2" />
+                <TextBox  Name="txtL7"  Grid.Column="5" Grid.Row="2" Text="txt2"  />
+                <Label    Name="lblL8"  Grid.Column="4" Grid.Row="3" Content="lbl3" />
+                <TextBox  Name="txtL8"  Grid.Column="5" Grid.Row="3" Text="txt3"  />
+                <Label    Name="lblL9"  Grid.Column="4" Grid.Row="4" Content="lbl4" />
+                <TextBox  Name="txtL9"  Grid.Column="5" Grid.Row="4" Text="txt4"  />
+                <Label    Name="lblL10" Grid.Column="4" Grid.Row="5" Content="lbl5" />
+                <TextBox  Name="txtL10" Grid.Column="5" Grid.Row="5" Text="txt5"  />
                 
                 
             </Grid>
