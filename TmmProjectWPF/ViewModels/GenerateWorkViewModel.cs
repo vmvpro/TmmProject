@@ -30,29 +30,31 @@ namespace TmmProjectWPF.ViewModels
         }
 
         public List<TableColumns> LenghtsColumnsFormation
-        {   get { return ColumnsFormation("L_");    }   }
+        { get { return ColumnsFormation(new[] { "L_" }); } }
 
         public List<TableColumns> MassColumnsFormation
-        { get { return ColumnsFormation("m"); } }
+        { get { return ColumnsFormation(new[] { "m", "Fc", "F_", "M_" }); } }
 
         public List<TableColumns> AnglesColumnsFormation
-        { get { return ColumnsFormation("fi"); } }
+        { get { return ColumnsFormation(new[] { "fi", "e", "y" } ); } }
 
 
-        private List<TableColumns> ColumnsFormation(string stringStartsWithColumn )
+        private List<TableColumns> ColumnsFormation(string[] StartsWithColumn)
         {
-            var list = new List<TableColumns>();
+            List<TableColumns> list = new List<TableColumns>();
 
             DataRow row = DataBase.Row(dataZ.Table, _selectionWork.VariantId);
 
             foreach (DataColumn col in row.Table.Columns)
             {
-                if (col.ColumnName.StartsWith(stringStartsWithColumn))
-                    list.Add
-                        (new TableColumns()
-                        {
-                            Name = col.ColumnName, Value = row[col.ColumnName]
-                        });
+                foreach (string stringStartsWithColumn in StartsWithColumn)
+                    if (col.ColumnName.StartsWith(stringStartsWithColumn))
+                        list.Add
+                            (new TableColumns()
+                            {
+                                Name = col.ColumnName.Replace("_", "__"),
+                                Value = row[col.ColumnName]
+                            });
             }
 
             return list;
