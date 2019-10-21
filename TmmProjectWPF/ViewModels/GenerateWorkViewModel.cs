@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using TmmProjectWPF.Commands;
 using TmmProjectWPF.Models;
+using TmmProjectWPF.Models.DataAccess;
 
 namespace TmmProjectWPF.ViewModels
 {
     public class GenerateWorkViewModel
     {
+        Data dataZ;
+
         SelectionWork _selectionWork;
 
         public GenerateWorkViewModel(SelectionWork selectionWork)
@@ -47,7 +50,10 @@ namespace TmmProjectWPF.ViewModels
 
         public void Generate(object selWorkObj)
         {
-            SelectionWork selWork = (SelectionWork)selWorkObj;
+            dataZ = DataBase.LoadData(TableName.z3);
+            
+
+            //SelectionWork selWork = (SelectionWork)selWorkObj;
 
             //MessageBox.Show(selWork.WorkId + " - " + selWork.VariantId);
 
