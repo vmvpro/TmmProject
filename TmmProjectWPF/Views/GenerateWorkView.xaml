@@ -6,8 +6,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TmmProjectWPF.ViewModels"
         xmlns:convert="clr-namespace:TmmProjectWPF.Converters"
+        
         mc:Ignorable="d">
+    <Window.Resources>
+        <DataTemplate x:Key="AddedColumnsTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
 
+                <Label Content="{Binding Name}"/>
+                <TextBox Grid.Column="1" Text="{Binding Value}" />
+            </Grid>
+
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <GroupBox Header="Входные данные:" HorizontalAlignment="Left" Height="128" Margin="20,25,0,0" VerticalAlignment="Top" Width="265">
             <Canvas>
@@ -47,75 +61,26 @@
         </Button>
                 
             
-        <GroupBox Header="Данные механизма" HorizontalAlignment="Left" Height="250" Margin="20,176,0,0" VerticalAlignment="Top" Width="346">
-            <Grid >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="10"></ColumnDefinition>
-                    
-                    <ColumnDefinition Width="50" ></ColumnDefinition>
-                    <ColumnDefinition Width="50" ></ColumnDefinition>
-                    
-                    <ColumnDefinition Width="10"></ColumnDefinition>
-                    
-                    <ColumnDefinition Width="50" ></ColumnDefinition>
-                    <ColumnDefinition Width="50" ></ColumnDefinition>
-                    
-                    <ColumnDefinition Width="10"></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="10"></RowDefinition>
-                    <RowDefinition Height="25"></RowDefinition>
-                    <RowDefinition Height="25"></RowDefinition>
-                    <RowDefinition Height="25"></RowDefinition>
-                    <RowDefinition Height="25"></RowDefinition>
-                    <RowDefinition Height="25"></RowDefinition>
-                    <RowDefinition Height="25"></RowDefinition>
-                </Grid.RowDefinitions>
+        <GroupBox Header="Данные механизма" HorizontalAlignment="Left" Height="156" Margin="20,176,0,0" VerticalAlignment="Top" Width="265">
+            <StackPanel Orientation="Horizontal" >
+                <StackPanel Margin="10" MinWidth="50" >
+                    <ItemsControl 
+                        ItemsSource="{Binding LenghtsColumnsFormation}" 
+                        ItemTemplate="{StaticResource AddedColumnsTemplate}" />
+                </StackPanel>
                 
-                <Label      Name="lblL_ab" Grid.Column="1" Grid.Row="1" Content="L__ab" />
-                <TextBox    Name="txtL_ab" Grid.Column="2" Grid.Row="1" 
-                            Text="{Binding Work.L_ab}"  />
+                <StackPanel Margin="10" MinWidth="50" >
+                    <ItemsControl 
+                        ItemsSource="{Binding MassColumnsFormation}"
+                        ItemTemplate="{StaticResource AddedColumnsTemplate}" />
+                </StackPanel>
                 
-                <Label      Name="lblL2" Grid.Column="1" Grid.Row="2" Content="L__bc" />
-                <TextBox    Name="txtL2" Grid.Column="2" Grid.Row="2" 
-                            Text="{Binding Work.L_bc}"  />
-                
-                <Label      Name="lblL3" Grid.Column="1" Grid.Row="3" Content="L__bd" />
-                <TextBox    Name="txtL3" Grid.Column="2" Grid.Row="3" 
-                            Text="{Binding Work.L_bd}"  />
-                
-                <Label      Name="lblL4" Grid.Column="1" Grid.Row="4" Content="L__a" />
-                <TextBox    Name="txtL4" Grid.Column="2" Grid.Row="4" 
-                            Text="{Binding Work.L_a}"  />
-                
-                <Label      Name="lblL5" Grid.Column="1" Grid.Row="5" Content="lbl5" />
-                <TextBox    Name="txtL5" Grid.Column="2" Grid.Row="5" 
-                            Text="txt5"  />
-                
-                <Label      Name="lblL6"  Grid.Column="4" Grid.Row="1" Content="lbl1" />
-                <TextBox    Name="txtL6"  Grid.Column="5" Grid.Row="1" 
-                            Text="txt1"  />
-                
-                <Label      Name="lblL7"  Grid.Column="4" Grid.Row="2" Content="lbl2" />
-                <TextBox    Name="txtL7"  Grid.Column="5" Grid.Row="2" 
-                            Text="txt2"  />
-                
-                <Label      Name="lblL8"  Grid.Column="4" Grid.Row="3" Content="lbl3" />
-                <TextBox    Name="txtL8"  Grid.Column="5" Grid.Row="3" 
-                            Text="txt3"  />
-                
-                <Label      Name="lblL9"  Grid.Column="4" Grid.Row="4" Content="lbl4" />
-                <TextBox    Name="txtL9"  Grid.Column="5" Grid.Row="4" 
-                            Text="txt4"  />
-                
-                <Label      Name="lblL10" Grid.Column="4" Grid.Row="5" Content="lbl5" />
-                <TextBox    Name="txtL10" Grid.Column="5" Grid.Row="5" 
-                            Text="txt5"  />
-                
-                
-            </Grid>
+                <StackPanel Margin="10" MinWidth="50" >
+                    <ItemsControl 
+                        ItemsSource="{Binding AnglesColumnsFormation}"
+                        ItemTemplate="{StaticResource AddedColumnsTemplate}" />
+                </StackPanel>
+            </StackPanel>
         </GroupBox>
 
     </Grid>

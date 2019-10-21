@@ -20,11 +20,12 @@ namespace TmmProjectWPF.Models.Works
             this._L_bc = dataRow.Field<decimal>("L_bc");
             this._L_bd = dataRow.Field<decimal>("L_bd");
             this._L_a = dataRow.Field<decimal>("L_a");
+
             this._m2 = dataRow.Field<decimal>("m2");
             this._m3 = dataRow.Field<decimal>("m3");
             this._m4 = dataRow.Field<decimal>("m4");
 
-            this._Fc = dataRow.Field<decimal>("Fc");
+            this._Fc = dataRow.Field<decimal>("mg_Fc");
 
             this._fi_v = dataRow.Field<long>("fi_v");
             this._fi_dv = dataRow.Field<long>("fi_dv");

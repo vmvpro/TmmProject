@@ -10,6 +10,32 @@ using System.IO;
 
 namespace TmmProjectWPF.Models.DataAccess
 {
+    public class TableColumns
+    {
+        public string Name { get; set; }
+        public object Value { get; set; }
+    }
+
+    public class Data
+    {
+        private DataTable _dt;
+        private SQLiteDataAdapter _da;
+
+        public Data(DataTable dt, SQLiteDataAdapter da)
+        {
+            _dt = dt;
+            _da = da;
+        }
+
+        public DataTable Table
+        { get { return _dt; } }
+
+        public SQLiteDataAdapter Adapter
+        { get { return _da; } }
+
+
+    }
+
     public static class Rows
     {
         /// <summary>
@@ -33,24 +59,6 @@ namespace TmmProjectWPF.Models.DataAccess
             //DataBase.Index = 0;
             return row;
         }
-    }
-
-    public class Data
-    {
-        private DataTable _dt;
-        private SQLiteDataAdapter _da;
-
-        public Data(DataTable dt, SQLiteDataAdapter da)
-        {
-            _dt = dt;
-            _da = da;
-        }
-
-        public DataTable Table
-        { get { return _dt; } }
-
-        public SQLiteDataAdapter Adapter
-        { get { return _da; } }
     }
 
     public class DataBase
@@ -201,6 +209,24 @@ namespace TmmProjectWPF.Models.DataAccess
 
         public static Dictionary<string, DataTable> DictionaryDataTables;
         public static Dictionary<string, SQLiteDataAdapter> DictionaryDataAdapters;
+
+        /// <summary>
+        /// Загрука данных через номер задания
+        /// </summary>
+        /// <param name="work">Номер задания</param>
+        /// <returns></returns>
+        public static Data LoadDataZD(int work)
+        {
+            UpdateDataBase();
+
+            string tableName = "z" + work + "_data";
+
+            DataTable dt = DictionaryDataTables[tableName];
+            SQLiteDataAdapter da = DataBase.DictionaryDataAdapters[tableName];
+
+            return new Data(dt, da);
+
+        }
 
         public static Data LoadData(string tableName)
         {
