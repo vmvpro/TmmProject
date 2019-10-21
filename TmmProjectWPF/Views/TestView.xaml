@@ -115,7 +115,7 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="{Binding Name}" />
+                            <Label Content="{Binding Name} " IsEnabled="True" />
                             <TextBox Text="{Binding Age}" />
                         </StackPanel>
                     </DataTemplate>
