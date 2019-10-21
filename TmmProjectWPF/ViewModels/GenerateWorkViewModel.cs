@@ -11,7 +11,7 @@ namespace TmmProjectWPF.ViewModels
 {
     public class GenerateWorkViewModel
     {
-        Data dataZ;
+        
 
         SelectionWork _selectionWork;
 
@@ -50,8 +50,11 @@ namespace TmmProjectWPF.ViewModels
 
         public void Generate(object selWorkObj)
         {
-            dataZ = DataBase.LoadData(TableName.z3);
-            
+            Data dataZ = DataBase.LoadData(TableName.z3);
+            Data lstn = DataBase.LoadData(TableName.lstn);
+            Data zd_student = DataBase.LoadData(TableName.zd_student);
+
+
 
             //SelectionWork selWork = (SelectionWork)selWorkObj;
 
