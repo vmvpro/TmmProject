@@ -78,28 +78,41 @@
                 <TextBox    Name="txtL_ab" Grid.Column="2" Grid.Row="1" 
                             Text="{Binding Work.L_ab}"  />
                 
-                <Label      Name="lblL2" Grid.Column="1" Grid.Row="2" Content="lbl2" />
-                <TextBox    Name="txtL2" Grid.Column="2" Grid.Row="2" Text="txt2"  />
+                <Label      Name="lblL2" Grid.Column="1" Grid.Row="2" Content="L__bc" />
+                <TextBox    Name="txtL2" Grid.Column="2" Grid.Row="2" 
+                            Text="{Binding Work.L_bc}"  />
                 
-                <Label      Name="lblL3" Grid.Column="1" Grid.Row="3" Content="lbl3" />
-                <TextBox    Name="txtL3" Grid.Column="2" Grid.Row="3" Text="txt3"  />
+                <Label      Name="lblL3" Grid.Column="1" Grid.Row="3" Content="L__bd" />
+                <TextBox    Name="txtL3" Grid.Column="2" Grid.Row="3" 
+                            Text="{Binding Work.L_bd}"  />
                 
-                <Label      Name="lblL4" Grid.Column="1" Grid.Row="4" Content="lbl4" />
-                <TextBox    Name="txtL4" Grid.Column="2" Grid.Row="4" Text="txt4"  />
+                <Label      Name="lblL4" Grid.Column="1" Grid.Row="4" Content="L__a" />
+                <TextBox    Name="txtL4" Grid.Column="2" Grid.Row="4" 
+                            Text="{Binding Work.L_a}"  />
                 
                 <Label      Name="lblL5" Grid.Column="1" Grid.Row="5" Content="lbl5" />
-                <TextBox    Name="txtL5" Grid.Column="2" Grid.Row="5" Text="txt5"  />
+                <TextBox    Name="txtL5" Grid.Column="2" Grid.Row="5" 
+                            Text="txt5"  />
                 
                 <Label      Name="lblL6"  Grid.Column="4" Grid.Row="1" Content="lbl1" />
-                <TextBox    Name="txtL6"  Grid.Column="5" Grid.Row="1" Text="txt1"  />
+                <TextBox    Name="txtL6"  Grid.Column="5" Grid.Row="1" 
+                            Text="txt1"  />
+                
                 <Label      Name="lblL7"  Grid.Column="4" Grid.Row="2" Content="lbl2" />
-                <TextBox    Name="txtL7"  Grid.Column="5" Grid.Row="2" Text="txt2"  />
+                <TextBox    Name="txtL7"  Grid.Column="5" Grid.Row="2" 
+                            Text="txt2"  />
+                
                 <Label      Name="lblL8"  Grid.Column="4" Grid.Row="3" Content="lbl3" />
-                <TextBox    Name="txtL8"  Grid.Column="5" Grid.Row="3" Text="txt3"  />
+                <TextBox    Name="txtL8"  Grid.Column="5" Grid.Row="3" 
+                            Text="txt3"  />
+                
                 <Label      Name="lblL9"  Grid.Column="4" Grid.Row="4" Content="lbl4" />
-                <TextBox    Name="txtL9"  Grid.Column="5" Grid.Row="4" Text="txt4"  />
+                <TextBox    Name="txtL9"  Grid.Column="5" Grid.Row="4" 
+                            Text="txt4"  />
+                
                 <Label      Name="lblL10" Grid.Column="4" Grid.Row="5" Content="lbl5" />
-                <TextBox    Name="txtL10" Grid.Column="5" Grid.Row="5" Text="txt5"  />
+                <TextBox    Name="txtL10" Grid.Column="5" Grid.Row="5" 
+                            Text="txt5"  />
                 
                 
             </Grid>

@@ -41,6 +41,19 @@ namespace TmmProjectWPF.ViewModels
 
         }
 
+        public IList<Student> ListStudents
+        {
+            get 
+            {
+                return new List<Student>() 
+                {   
+                    new Student("VMV1") {Age = 20},
+                    new Student("VMV2") {Age = 25},
+                    new Student("VMV3") {Age = 30}
+                };
+            }
+        }
+
         public Student Student
         {
             get { return st; }
