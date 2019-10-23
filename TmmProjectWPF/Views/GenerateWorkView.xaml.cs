@@ -21,11 +21,13 @@ namespace TmmProjectWPF.Views
     /// </summary>
     public partial class GenerateWorkView : Window
     {
-        public GenerateWorkView(SelectionWork selectionWork)
+
+
+        public GenerateWorkView()
         {
             InitializeComponent();
-
-            DataContext = new GenerateWorkViewModel(selectionWork);
+            
+            //DataContext = new GenerateWorkViewModel(selectionWork);
 
         }
     }

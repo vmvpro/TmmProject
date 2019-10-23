@@ -10,40 +10,40 @@ namespace TmmProjectWPF.ViewModels
 {
     public class GenerateWorkViewModel
     {
-        private SelectionWork _selectionWork;
+        private SelectionWork _selectionWork = null;
         private Data dataZ;
-
-        Student st;
+        private DataRow rowZ = null;
+        //Student _student;
 
         public GenerateWorkViewModel() { }
-
+        
         public GenerateWorkViewModel(SelectionWork selectionWork)
         {
             _selectionWork = selectionWork;
+            rowZ = _selectionWork.RowZ;
 
-            dataZ = DataBase.LoadDataZD(_selectionWork.WorkId);
-            st = new Student();
+            _selectionWork.LenghtsColumnsFormation = ColumnsFormation(_selectionWork, new[] { "L_" });
+            _selectionWork.MassColumnsFormation = ColumnsFormation(_selectionWork, new[] { "m", "Fc", "F_", "M_" });
+            _selectionWork.AnglesColumnsFormation = ColumnsFormation(_selectionWork, new[] { "fi", "e", "y" });
 
-            //work = new Work03(_selectionWork.VariantId);
+            //dataZ = DataBase.LoadDataZD(_selectionWork.WorkId);
+            //_student = new Student();
 
             generateCommand = new Command(Generate);
         }
 
-        public List<TableColumns> LenghtsColumnsFormation
-        { get { return ColumnsFormation(new[] { "L_" }); } }
+        public SelectionWork SelectionWork
+        {
+            get { return _selectionWork; }
+        }
 
-        public List<TableColumns> MassColumnsFormation
-        { get { return ColumnsFormation(new[] { "m", "Fc", "F_", "M_" }); } }
-
-        public List<TableColumns> AnglesColumnsFormation
-        { get { return ColumnsFormation(new[] { "fi", "e", "y" } ); } }
-
-
-        private List<TableColumns> ColumnsFormation(string[] StartsWithColumn)
+        private List<TableColumns> ColumnsFormation(SelectionWork selectionWork, string[] StartsWithColumn)
         {
             List<TableColumns> list = new List<TableColumns>();
 
-            DataRow row = DataBase.Row(dataZ.Table, _selectionWork.VariantId);
+            //DataRow row = DataBase.Row(dataZ, VariantId);
+
+            DataRow row = selectionWork.RowZ;
 
             foreach (DataColumn col in row.Table.Columns)
             {
@@ -60,23 +60,43 @@ namespace TmmProjectWPF.ViewModels
             return list;
         }
 
-        
-        public int WorkId
-        {
-            get { return _selectionWork.WorkId; }
-        }
+        //public List<TableColumns> LenghtsColumnsFormation;
+        //{ get { return ColumnsFormation(new[] { "L_" }); } }
 
-        public int VariantId
-        {
-            get { return _selectionWork.VariantId; }
-        }
+        //public List<TableColumns> MassColumnsFormation
+        //{ get { return ColumnsFormation(new[] { "m", "Fc", "F_", "M_" }); } }
 
-        string lastName;
-        public string LastName
-        {
-            get { return st.LastName; }
-            set { lastName = value; }
-        }
+        //public List<TableColumns> AnglesColumnsFormation
+        //{ get { return ColumnsFormation(new[] { "fi", "e", "y" } ); } }
+
+        //public List<TableColumns> AnglesColumnsFormation
+        //{ get { return ColumnsFormation(new[] { "fi", "e", "y" } ); } }
+
+        //TableAdded2ColumnsFormation =
+        //        ColumnsFormation(_selectionWork.DataRowDodatok2.Table, new[] { "w2", "delta", "h", "zi", "zm", "position_m" });
+
+
+
+
+
+
+
+        //public int? WorkId
+        //{
+        //    get { return (_selectionWork != null) ? _selectionWork?.WorkId : null; }
+        //}
+
+        //public int? VariantId
+        //{
+        //    get { return (_selectionWork != null) ? _selectionWork?.VariantId : null; }
+        //}
+
+        //string lastName;
+        //public string LastName
+        //{
+        //    get { return st.LastName; }
+        //    set { lastName = value; }
+        //}
 
         //===========================================================
 
@@ -94,24 +114,20 @@ namespace TmmProjectWPF.ViewModels
 
         #region Methods
         
-        public void Generate(object selWorkObj)
+        public void Generate(object studentObject)
         {
-
             //Data dataZ = DataBase.LoadData(TableName.z3);
             Data lstn = DataBase.LoadData(TableName.lstn);
             Data zd_student = DataBase.LoadData(TableName.zd_student);
 
-            Student student = selWorkObj as Student;
+            Student student = studentObject as Student;
             if (student == null) return;
 
-            st.LastName = student.LastName;
+            _selectionWork.LastName = student.LastName;
+            _selectionWork.Year = student.Year;
 
-            //_selectionWork.LastName = selWorkObj
-
-            //string lastName = (string)currentWork[0];
-            //int year = Convert.ToInt32(currentWork[1]);
-            //DataRow drDodatok2 = StoredProcedure.TableDodatok2(lastName, year);
-            //int id_dodatok = (int)drDodatok2["id"];
+            DataRow drDodatok2 = StoredProcedure.TableDodatok2(_selectionWork.LastName, _selectionWork.Year);
+            long id_dodatok = drDodatok2.Field<long>("id");
 
         }
 

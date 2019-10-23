@@ -8,6 +8,9 @@
         xmlns:convert="clr-namespace:TmmProjectWPF.Converters"
         
         mc:Ignorable="d">
+    <Window.DataContext>
+        <local:GenerateWorkViewModel/>
+    </Window.DataContext>
     <Window.Resources>
         <DataTemplate x:Key="AddedColumnsTemplate">
             <Grid>
@@ -28,13 +31,13 @@
                 <Label Content="Задание" Canvas.Left="10" Canvas.Top="10" Width="70" RenderTransformOrigin="0.3,-0.269"/>
                 <TextBox Name="txtIdWork" Height="26" Canvas.Left="74" TextWrapping="Wrap" 
                          Canvas.Top="10" Width="44" 
-                         Text="{Binding Path=WorkId, Mode=OneWay}"
+                         Text="{Binding Path=SelectionWork.WorkId , Mode=OneWay}"
                          IsEnabled="False"/>
 
                 <Label Content="Вариант" Canvas.Left="123" Canvas.Top="10" Width="65"/>
                 <TextBox Name="txtIdVariant" Height="26" Canvas.Left="188" TextWrapping="Wrap" 
                          Canvas.Top="10" Width="48"
-                         Text="{Binding Path=VariantId, Mode=OneWay}"
+                         Text="{Binding Path=SelectionWork.VariantId, Mode=OneWay}"
                          IsEnabled="False"/>
                 <!---->
 
@@ -65,26 +68,26 @@
             <StackPanel Orientation="Horizontal" MinHeight="100" >
                 <StackPanel Margin="10" MinWidth="50" >
                     <ItemsControl 
-                        ItemsSource="{Binding LenghtsColumnsFormation}" 
+                        ItemsSource="{Binding SelectionWork.LenghtsColumnsFormation}" 
                         ItemTemplate="{StaticResource AddedColumnsTemplate}" />
                 </StackPanel>
                 
                 <StackPanel Margin="10" MinWidth="50" >
                     <ItemsControl 
-                        ItemsSource="{Binding MassColumnsFormation}"
+                        ItemsSource="{Binding SelectionWork.MassColumnsFormation}"
                         ItemTemplate="{StaticResource AddedColumnsTemplate}" />
                 </StackPanel>
                 
                 <StackPanel Margin="10" MinWidth="50" >
                     <ItemsControl 
-                        ItemsSource="{Binding AnglesColumnsFormation}"
+                        ItemsSource="{Binding SelectionWork.AnglesColumnsFormation}"
                         ItemTemplate="{StaticResource AddedColumnsTemplate}" />
                 </StackPanel>
             </StackPanel>
         </GroupBox>
         <TextBox HorizontalAlignment="Left" Height="24" Margin="20,320,0,0" TextWrapping="Wrap" 
                  VerticalAlignment="Top" Width="120"
-                 Text="{Binding LastName, Mode=TwoWay}"/>
+                 Text="{Binding SelectionWork.LastName , Mode=OneWay}"/>
 
     </Grid>
 </Window>

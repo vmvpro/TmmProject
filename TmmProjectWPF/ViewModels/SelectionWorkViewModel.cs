@@ -49,7 +49,10 @@ namespace TmmProjectWPF.ViewModels
             //MessageBox.Show(selWork.WorkId + " - " + selWork.VariantId);
 
 
-            var generateWorkView = new GenerateWorkView(selWork);
+            //var generateWorkView = new GenerateWorkView(selWork);
+
+            var generateWorkView = new GenerateWorkView();
+            generateWorkView.DataContext = new GenerateWorkViewModel(selWork);
 
             generateWorkView.Show();
 

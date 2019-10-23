@@ -139,8 +139,16 @@ namespace TmmProjectWPF.Models.DataAccess
 
         }
 
+        private static bool isLoadData = false;
+        //public static bool IsLoadData()
+        //{
+        //    return isLoadData;
+        //}
+
         public static void UpdateDataBase()
         {
+            isLoadData = true;
+
             DictionaryDataTables = new Dictionary<string, DataTable>();
             DictionaryDataAdapters = new Dictionary<string, SQLiteDataAdapter>();
 
@@ -217,7 +225,7 @@ namespace TmmProjectWPF.Models.DataAccess
         /// <returns></returns>
         public static Data LoadDataZD(int work)
         {
-            UpdateDataBase();
+            if (!isLoadData) UpdateDataBase();
 
             string tableName = "z" + work + "_data";
 
@@ -230,7 +238,8 @@ namespace TmmProjectWPF.Models.DataAccess
 
         public static Data LoadData(string tableName)
         {
-            UpdateDataBase();
+            if (!isLoadData) UpdateDataBase();
+
             DataTable dt = DictionaryDataTables[tableName];
             SQLiteDataAdapter da = DataBase.DictionaryDataAdapters[tableName];
 
@@ -323,7 +332,7 @@ namespace TmmProjectWPF.Models.DataAccess
 
         public static DataRow Row(long ID, string tableName)
         {
-            UpdateDataBase();
+            if (!isLoadData) UpdateDataBase();
 
             DataRow row;
             try
@@ -340,6 +349,8 @@ namespace TmmProjectWPF.Models.DataAccess
 
         public static DataRow Row(long ID, DataTable tableName)
         {
+            if (!isLoadData) UpdateDataBase();
+
             DataRow row;
             try
             {
@@ -400,6 +411,8 @@ namespace TmmProjectWPF.Models.DataAccess
 
         public static DataRow Row(string tableName, string columnName, string columnValue)
         {
+            if (!isLoadData) UpdateDataBase();
+
             DataRow row;
             try
             {
@@ -416,6 +429,8 @@ namespace TmmProjectWPF.Models.DataAccess
 
         public static DataRow Row(string tableName, string columnName, long columnValue)
         {
+            if (!isLoadData) UpdateDataBase();
+
             DataRow row;
             try
             {
@@ -432,6 +447,8 @@ namespace TmmProjectWPF.Models.DataAccess
 
         public static DataRow Row(DataTable tableObject, string columnName, string columnValue)
         {
+            if (!isLoadData) UpdateDataBase();
+
             DataRow row;
             try
             {
