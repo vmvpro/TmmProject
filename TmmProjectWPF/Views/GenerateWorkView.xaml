@@ -62,7 +62,7 @@
                 
             
         <GroupBox Header="Данные механизма" HorizontalAlignment="Left" Height="Auto" Margin="20,176,0,0" VerticalAlignment="Top" Width="Auto">
-            <StackPanel Orientation="Horizontal" >
+            <StackPanel Orientation="Horizontal" MinHeight="100" >
                 <StackPanel Margin="10" MinWidth="50" >
                     <ItemsControl 
                         ItemsSource="{Binding LenghtsColumnsFormation}" 
@@ -82,6 +82,9 @@
                 </StackPanel>
             </StackPanel>
         </GroupBox>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="20,320,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="120"
+                 Text="{Binding LastName, Mode=TwoWay}"/>
 
     </Grid>
 </Window>

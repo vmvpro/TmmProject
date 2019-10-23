@@ -11,8 +11,9 @@ namespace TmmProjectWPF.ViewModels
     public class GenerateWorkViewModel
     {
         private SelectionWork _selectionWork;
-        private Work03 work;
         private Data dataZ;
+
+        Student st;
 
         public GenerateWorkViewModel() { }
 
@@ -21,10 +22,9 @@ namespace TmmProjectWPF.ViewModels
             _selectionWork = selectionWork;
 
             dataZ = DataBase.LoadDataZD(_selectionWork.WorkId);
+            st = new Student();
 
             //work = new Work03(_selectionWork.VariantId);
-
-
 
             generateCommand = new Command(Generate);
         }
@@ -60,11 +60,7 @@ namespace TmmProjectWPF.ViewModels
             return list;
         }
 
-        public Work03 Work
-        {
-            get { return work; }
-        }
-
+        
         public int WorkId
         {
             get { return _selectionWork.WorkId; }
@@ -73,6 +69,13 @@ namespace TmmProjectWPF.ViewModels
         public int VariantId
         {
             get { return _selectionWork.VariantId; }
+        }
+
+        string lastName;
+        public string LastName
+        {
+            get { return st.LastName; }
+            set { lastName = value; }
         }
 
         //===========================================================
@@ -90,24 +93,23 @@ namespace TmmProjectWPF.ViewModels
         //===========================================================
 
         #region Methods
-
+        
         public void Generate(object selWorkObj)
         {
-
-
-
 
             //Data dataZ = DataBase.LoadData(TableName.z3);
             Data lstn = DataBase.LoadData(TableName.lstn);
             Data zd_student = DataBase.LoadData(TableName.zd_student);
 
-            object[] currentWork = selWorkObj as object[];
-            if (currentWork == null) return;
+            Student student = selWorkObj as Student;
+            if (student == null) return;
 
+            st.LastName = student.LastName;
 
+            //_selectionWork.LastName = selWorkObj
 
-            string lastName = (string)currentWork[0];
-            int year = Convert.ToInt32(currentWork[1]);
+            //string lastName = (string)currentWork[0];
+            //int year = Convert.ToInt32(currentWork[1]);
             //DataRow drDodatok2 = StoredProcedure.TableDodatok2(lastName, year);
             //int id_dodatok = (int)drDodatok2["id"];
 

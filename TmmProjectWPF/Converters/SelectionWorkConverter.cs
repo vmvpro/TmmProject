@@ -37,17 +37,19 @@ namespace TmmProjectWPF.Converters
 
         public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            //if (values[0] == null || values[1] == null)
-            //    return (object)null;
+            if (values[0] == null || values[1] == null)
+                return (object)null;
 
-            //string lastName = (string)values[0];
-            //string year = (string)values[1];
+            string lastName = (string)values[0];
+            int year = System.Convert.ToInt32(values[1]); 
 
+            var obj = new Student() { LastName = lastName, Year = year };
+            
             //var obj = new SelectionWork(work, variant);
 
             //return obj;
 
-            return (object)values;
+            return obj;
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)

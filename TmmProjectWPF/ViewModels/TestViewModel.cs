@@ -36,7 +36,7 @@ namespace TmmProjectWPF.ViewModels
                 listSelectionWork.Add(obj);
             }
 
-            st = new Student("vmvpro");
+            st = new Student();
             st.Age = 29;
 
         }
@@ -47,9 +47,9 @@ namespace TmmProjectWPF.ViewModels
             {
                 return new List<Student>() 
                 {   
-                    new Student("VMV1") {Age = 20},
-                    new Student("VMV2") {Age = 25},
-                    new Student("VMV3") {Age = 30}
+                    new Student() {Age = 20},
+                    new Student() {Age = 25},
+                    new Student() {Age = 30}
                 };
             }
         }

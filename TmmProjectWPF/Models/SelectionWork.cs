@@ -33,6 +33,28 @@ namespace TmmProjectWPF.Models
             } 
         }
 
+        //string _lastName;
+        //public string LastName
+        //{
+        //    get { return LastName; }
+        //    set
+        //    {
+        //        _lastName = value;
+        //        OnPropertyChanged("LastName");
+        //    }
+        //}
+
+        //int _year;
+        //public int Year
+        //{
+        //    get { return _year; }
+        //    set
+        //    {
+        //        _year = value;
+        //        OnPropertyChanged("Year");
+        //    }
+        //}
+
         public SelectionWork(int workId, int variantId)
         {
             _workId = workId;

@@ -5,9 +5,34 @@ namespace TmmProjectWPF.Models
 {
     public class Student : INotifyPropertyChanged
     {
+        public Student()
+        {
+            //this.name = name;
+        }
+
+        private int _year;
+        public int Year
+        {
+            get { return _year; }
+            set
+            {
+                _year = value;
+                OnPropertyChanged("Year");
+            }
+        }
+		
+        private string _lastName;
+        public string LastName
+        {
+            get { return _lastName; }
+            set
+            {
+                _lastName = value;
+                OnPropertyChanged("LastName");
+            }
+        }
 
         private int _age;
-
         public int Age
         {
             get { return _age; }
@@ -18,14 +43,7 @@ namespace TmmProjectWPF.Models
             }
         }
         
-			
-
         private string name;
-        public Student(string name)
-        {
-            this.name = name;
-        }
-
         public string Name
         {
             get { return name; }
